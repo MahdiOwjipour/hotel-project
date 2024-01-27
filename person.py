@@ -10,7 +10,10 @@ class Person:
     def update_contact_details(self, new_first_name, new_last_name, new_age):
         self.first_name = new_first_name or self.first_name
         self.last_name = new_last_name or self.last_name
-        self.age = int(new_age or self.age)
+        try:
+            self.age = int(new_age or self.age)
+        except ValueError:
+            print("age must be valid integer!")
 
     def __str__(self):
         return f"first name: {self.first_name}, last name: {self.last_name}, age: {self.age}"
