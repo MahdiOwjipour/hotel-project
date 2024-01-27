@@ -7,7 +7,6 @@ from admin import *
 class Hotel:
     def __init__(self, name):
         self.name = name
-        self.room_booking = {} # to ascribe a room id to a guest id
 
 
     def list_available_rooms(self, room_type):

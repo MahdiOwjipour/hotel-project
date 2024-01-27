@@ -1,5 +1,8 @@
 from person import *
+from staff import *
+from guest import *
 from room import *
+from admin import *
 
 class Guest(Person):
     def __init__(self, id_, first_name, last_name, age):
