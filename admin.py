@@ -9,13 +9,13 @@ class Admin(Person):
         self.staff_dict = {} # staff members
 
     def create_staff_account(self, new_staff):
-        self.id_ = input("new staff id: ")
-        self.first_name = input("new staff first name: ")
-        self.last_name = input("new staff last name: ")
-        self.age = input("new staff age: ")
-        self.role = input("new staff role: ")
+        staff_id_ = input("new staff id: ")
+        staff_first_name = input("new staff first name: ")
+        staff_last_name = input("new staff last name: ")
+        staff_age = input("new staff age: ")
+        staff_role = input("new staff role: ")
         if new_staff.id_ not in self.staff_dict:
-            self.staff_dict[new_staff.id_] = new_staff
+            self.staff_dict[new_staff.staff_id_] = new_staff
         else:
             print("id already existed!")
 
@@ -28,7 +28,7 @@ class Admin(Person):
 
     def update_staff_role(self, staff_id, new_role):
         if staff_id in self.staff_dict:
-            staff_id[self.role] = new_role or self.role
+            self.staff_dict[self.id_][self.role] = new_role or self.role
         else:
             print("id does not exist!")
 
@@ -37,3 +37,6 @@ class Admin(Person):
 
     def generate_payroll_report(self):
         pass
+
+    def display_role(self):
+        return f"{self.first_name} {self.last_name} is Admin"
